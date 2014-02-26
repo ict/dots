@@ -1,0 +1,8 @@
+#! /bin/sh
+bspc rule -a mpv floating=true
+bspc rule -a Screenkey manage=false
+bspc rule -a Gimp floating=true
+bspc rule -a TightVNC floating=true
+bspc rule -a Dia floating=true
+bspc rule -a BSPWM_FRAME frame=true
+bspc rule -a Whatpulse floating=true

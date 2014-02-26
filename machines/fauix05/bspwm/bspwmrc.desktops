@@ -1,0 +1,6 @@
+DESKS_FIRST="web code cod3 term more"
+DESKS_SECOND="x y z 9 comm"
+bspc monitor HDMI1 -d $DESKS_FIRST
+bspc monitor HDMI2 -d $DESKS_SECOND
+bspc config -m HDMI1 bottom_padding 34
+# bspc monitor HDMI2 --pad 0 0 20 0

@@ -1,0 +1,3 @@
+	Bundle 'Shougo/vimproc.vim'
+	Bundle 'scrooloose/syntastic'
+	Bundle 'Valloric/YouCompleteMe'
