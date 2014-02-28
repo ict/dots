@@ -1,4 +1,7 @@
 #!/bin/sh
-mkdir -p "${XDG_CONFIG_HOME:-$HOME}/vim/tmp" \
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/vim/tmp" \
     "${XDG_CONFIG_HOME:-$HOME/.config}/vim/undo" \
     "${XDG_CONFIG_HOME:-$HOME/.config}/vim/backup"
+
+ln -fsr vimrc "$HOME/.vimrc"
+ln -fsr . "$HOME/.vim"

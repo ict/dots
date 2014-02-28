@@ -3,7 +3,8 @@
 [ ! -e "$HOME"/.oh-my-zsh ] && git clone 'https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh"
 ln -frs zshrc "$HOME/.zshrc"
 
-for script in *.zsh
+shopt -s nullglob
+for script in *zsh
 do
-	ln -frs "$script" "$HOME/.oh-my-zsh/custom/$config"
+	ln -frs "$script" "$HOME/.oh-my-zsh/custom/$script"
 done
