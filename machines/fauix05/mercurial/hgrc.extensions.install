@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ ! -e "$HOME/.local/mercurial/extensions" ] && mkdir -p "$HOME/.local/mercurial/extensions"
+[ ! -e "$HOME/.local/mercurial/extensions/onsub" ] && hg clone 'https://bitbucket.org/aragost/onsub/' "$HOME/.local/mercurial/extensions/onsub"
+[ ! -e "$HOME/.local/mercurial/extensions/hgshelve" ] && hg clone 'https://bitbucket.org/tksoh/hgshelve' "$HOME/.local/mercurial/extensions/hgshelve"

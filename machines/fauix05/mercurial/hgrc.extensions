@@ -1,0 +1,13 @@
+# onsub - fuer vereinfachtes arbeiten mit subrepositories
+# ist auf lehrstuhlrechnern an genau dieser stelle vorinstalliert
+# sonst: clonen von https://bitbucket.org/aragost/onsub/
+onsub = /home/demian/.local/mercurial/extensions/onsub/onsub.py
+
+# shelve - zeitweises sichern von nicht committeten aenderungen
+# auf nicht-lehrstuhlrechnern: clonen von https://bitbucket.org/tksoh/hgshelve/
+hgshelve = /home/demian/.local/mercurial/extensions/hgshelve/hgshelve.py
+
+
+# make webinf2 work
+[trusted]
+users = 10248

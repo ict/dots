@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -frs uni.zsh "$HOME/.oh-my-zsh/custom/uni.zsh"

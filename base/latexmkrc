@@ -1,0 +1,5 @@
+$aux_dir = 'build';
+$preview_mode = 1;
+$pdf_mode = 1;
+$pdf_previewer = "start evince";
+$pdf_update_method = 0;

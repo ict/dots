@@ -1,0 +1,2 @@
+XF86HomePage
+	i3lock -t -i ~/.i3/lock.png

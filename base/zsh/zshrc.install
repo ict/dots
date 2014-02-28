@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ ! -e "$HOME"/.oh-my-zsh ] && git clone 'https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh"
+ln -frs zshrc "$HOME/.zshrc"
+
+for script in *.zsh
+do
+	ln -frs "$script" "$HOME/.oh-my-zsh/custom/$config"
+done
