@@ -38,6 +38,7 @@ Bundle 'gmarik/vundle'
 Bundle 'SirVer/ultisnips'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Raimondi/delimitMate'
+Bundle 'idbrii/vim-focusclip'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
@@ -197,6 +198,9 @@ set switchbuf=usetab
 "}}}
 
 " {{{ PLUGIN CONFIG
+
+" needed for focusclip
+set clipboard="unnamed"
 
 " Configure Ultisnips
 let g:UltiSnipsUsePythonVersion = 2
