@@ -53,11 +53,11 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/neomru.vim'
 Bundle 'merlinrebrovic/focus.vim'
-Bundle 'ict/vim-syntax-casm'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 
 if ! s:is_windows
 	" Too much work to get those bundles working in win..
@@ -184,7 +184,7 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.class,*.pyc " compiled object
 
 if has("unix")
 	" setup spelling but dont use it normally
-	setlocal spell spelllang=de_20
+	" setlocal spell spelllang=de_20
 	se nospell
 endif
 
@@ -219,7 +219,7 @@ let g:focusmode_width = 100
 
 " call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
+" call unite#set_profile('files', 'smartcase', 1)
 " call unite#custom#source('line','matchers','matcher_fuzzy')
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
