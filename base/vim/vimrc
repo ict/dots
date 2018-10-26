@@ -61,7 +61,6 @@ Bundle 'vim-airline/vim-airline-themes'
 
 if ! s:is_windows
 	" Too much work to get those bundles working in win..
-	!!@@devplugins
 endif
 
 
@@ -203,7 +202,7 @@ set switchbuf=usetab
 set clipboard="unnamed"
 
 " Configure Ultisnips
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 " TODO! Doesnt work in console
@@ -255,14 +254,6 @@ imap <buffer> ]]     <Plug>LatexCloseCurEnv
 let g:LatexBox_quickfix=2
 let g:LatexBox_latexmk_preview_continuously=1
 let g:LatexBox_show_warnings=0
-
-" YCM
-let g:ycm_confirm_extra_conf = 1
-" Use '{' to trigger semantic completion for LaTeX, using
-" LaTeX-Box's omnicomplete function
-let g:ycm_semantic_triggers = {
-                \ 'tex': ['{'],
-                \ }
 
 " Airline:
 
