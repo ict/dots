@@ -18,10 +18,6 @@ unsetopt beep extendedglob
 unsetopt bgnice
 bindkey -e
 
-# extensions
-alias -s png='eog'
-alias -s jpg='eog'
-
 alias ls='ls -h --color=auto --group-directories-first'
 alias l='ls'
 alias ll='ls -lh'

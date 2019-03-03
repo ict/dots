@@ -1,1 +1,21 @@
+#!/bin/sh
+
+# Merge in defaults and keymaps
+# sysresources=/etc/X11/xinit/.Xresources
+# sysmodmap=/etc/X11/xinit/.Xmodmap
+# userresources="$HOME/.Xresources"
+# usermodmap="$HOME/.Xmodmap"
+# [ -f $sysresources ] && xrdb -merge "$sysresources"
+# [ -f $sysmodmap ] && xmodmap "$sysmodmap"
+# [ -f $userresources ] && xrdb -merge "$userresources"
+# [ -f $usermodmap ] && xmodmap "$usermodmap"
+
+# Set X-specific environment
+[ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
+autorandr --change
+
+# Start GNOME Keyring
+eval $(/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg --start)
+export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
+
 exec bspwm

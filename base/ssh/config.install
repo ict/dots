@@ -1,3 +1,0 @@
-#!/bin/bash
-mkdir -p "$HOME/.ssh"
-ln -fsr config "$HOME/.ssh/config"

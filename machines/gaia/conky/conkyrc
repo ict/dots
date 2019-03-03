@@ -8,7 +8,7 @@ own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-minimum_size 300 100
+minimum_size 300 200
 maximum_width 1280
 draw_shades yes
 draw_outline no
@@ -17,9 +17,9 @@ draw_graph_borders no
 default_color e0e0e0
 default_shade_color black
 default_outline_color green
-alignment bottom_left
-gap_x 35
-gap_y 75
+alignment bottom_right
+gap_x 5
+gap_y 35
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -30,8 +30,3 @@ use_spacer right
 
 TEXT
 ${voffset 10}${color #dddddd}${font Ubuntu:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color #FCD97B}${font Ubuntu:pixelsize=42}${time %d}${voffset -14}${color #dddddd}${font Ubuntu:pixelsize=22} ${time  %B} ${time %Y}${font}${voffset 24}${font Ubuntu:pixelsize=58}${offset -165}${time %A}${font}
-
-
-
-
-
