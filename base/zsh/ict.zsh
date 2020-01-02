@@ -30,12 +30,11 @@ alias pacman='sudo pacman'
 alias vncon='vncserver -geometry 1024x768 -depth 16'
 alias vncoff='vncserver -kill :1'
 alias mc='env LANG=en_US.utf8 mc'
-alias sshome='ssh -p 1501 -Y -C -L 5901:localhost:5901 ict@ictbox.no-ip.org'
 
 bindkey "\e[1~" beginning-of-line # Home
 bindkey "\e[4~" end-of-line # End
-bindkey "\e[5~" history-beginning-search-backward # PageUp
-bindkey "\e[6~" history-beginning-search-forward # PageDown
+bindkey '^[[5~' history-beginning-search-backward
+bindkey '^[[6~' history-beginning-search-forward
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
 
@@ -55,4 +54,3 @@ function makepdf()
 	ps2pdf -sPAPERSIZE=a4 "$1.ps" "$1.pdf"
 	rm -f "$1.ps"
 }
-
