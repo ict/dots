@@ -35,7 +35,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Load bundles that work everywhere
-Bundle 'SirVer/ultisnips'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Raimondi/delimitMate'
 Bundle 'idbrii/vim-focusclip'
@@ -49,15 +48,13 @@ Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-signify'
 Bundle 'justinmk/vim-sneak'
 Bundle 'godlygeek/tabular'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/unite-outline'
-Bundle 'Shougo/neomru.vim'
-Bundle 'merlinrebrovic/focus.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
+Bundle 'vim-scripts/indentpython.vim'
+Bundle 'ervandew/supertab'
+Bundle 'davidhalter/jedi-vim'
 
 if ! s:is_windows
 	" Too much work to get those bundles working in win..
@@ -198,6 +195,9 @@ set switchbuf=usetab
 
 " {{{ PLUGIN CONFIG
 
+" SuperTab
+let g:SuperTabCrMapping = 1
+"
 " needed for focusclip
 set clipboard="unnamed"
 
@@ -213,39 +213,6 @@ let g:startify_bookmarks = [ '~/.vimrc' ]
 let g:startify_skiplist = [ 'COMMIT_EDITMSG' ]
 
 let g:focusmode_width = 100
-
-" unite config:
-
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-" call unite#set_profile('files', 'smartcase', 1)
-" call unite#custom#source('line','matchers','matcher_fuzzy')
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_source_file_rec_max_cache_files=5000
-let g:unite_prompt='» '
-if executable('ag')
-	let g:unite_source_grep_command='ag'
-	let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
-	let g:unite_source_grep_recursive_opt=''
-endif
-nmap <space> [unite]
-nnoremap [unite] <nop>
-if s:is_windows
-	nnoremap <silent> [unite]<space> :<C-u>Unite -resume -auto-resize -buffer-name=mixed file_rec buffer file_mru bookmark<cr><c-u>
-	nnoremap <silent> [unite]f :<C-u>Unite -resume -auto-resize -buffer-name=files file_rec<cr><c-u>
-else
-	nnoremap <silent> [unite]<space> :<C-u>Unite -resume -auto-resize -buffer-name=mixed file_rec/async buffer file_mru bookmark<cr><c-u>
-	nnoremap <silent> [unite]f :<C-u>Unite -resume -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-endif
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
-nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]M :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
-nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline<cr>
-nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
-nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mru buffer file_mru bookmark<cr>
 
 " latex-box
 imap <buffer> [[     \begin{
@@ -435,6 +402,9 @@ autocmd InsertLeave * setl number relativenumber
 " smarter :make for java
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype java set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+
+" less indent for yaml
+autocmd Filetype yaml set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Wrap text when writing latex
 autocmd Filetype tex set tw=100
