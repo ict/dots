@@ -27,4 +27,7 @@ bspc config normal_frame_opacity 0
 bspc config focused_frame_opacity 0.2
 bspc config pointer_modifier mod4
 
+export SXHKD_SHELL=/bin/bash
 polybar example &
+sxhkd &
+source ${XDG_CONFIG_HOME}/bspwm/autostart
