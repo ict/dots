@@ -337,10 +337,13 @@ imap <Nul> <C-n>
 nnoremap <C-T> :tabnew<CR>
 
 " Window Mappings
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+" ... are handled by tmux-vim plugin in linux
+if s:is_windows
+	nnoremap <C-H> <C-W>h
+	nnoremap <C-J> <C-W>j
+	nnoremap <C-K> <C-W>k
+	nnoremap <C-L> <C-W>l
+endif
 nnoremap <C-=> <C-W>=
 nnoremap <leader>o :only<CR>
 
@@ -359,9 +362,6 @@ nnoremap <silent> <leader>W :%s/\s\+$//e<CR>
 
 " Save on leader-s
 nnoremap <leader>s :w<CR>
-
-" Indent according to GNU
-nnoremap <leader>gnu :call GnuIndent()<CR>
 
 " break undo on newline (and expand abbrevs beforehand)
 inoremap <CR> <C-]><C-G>u<CR>
@@ -443,13 +443,6 @@ endif
 "}}}
 
 " {{{ FUNCTIONS
-" R.'s GNU-indent style
-function! GnuIndent()
-	setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
-	setlocal shiftwidth=2
-	setlocal tabstop=8
-endfunction
-
 function! Beamer(size)
 	let n = "Menlo Regular for Powerline:h" . a:size
 	let &guifont = n
