@@ -47,7 +47,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-signify'
 Bundle 'justinmk/vim-sneak'
-Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'vim-airline/vim-airline'
@@ -224,49 +223,50 @@ let g:LatexBox_show_warnings=0
 
 " Airline:
 
-	let g:airline_theme = 'light'
-	" Separators between categories
-	let g:airline_left_sep = '»'
-	let g:airline_right_sep = '«'
-	let g:airline_linecolumn_prefix = '␤ '
-	let g:airline_branch_prefix = '⎇ '
-	let g:airline_readonly_symbol = '₩'
-	let g:airline_paste_symbol = 'ρ'
-	" Disable bufferline integration
-	let g:airline_enable_bufferline = 0
-	" Enable Syntastic integration
-	let g:airline_enable_syntastic = 1
-	" Enable Fugitive/Lawrencium integration
-	let g:airline_enable_branch = 1
-	" Enable Tagbar integration
-	let g:airline_enable_tagbar = 1
-	" Enable modified detection
-	let g:airline_detect_modified = 1
-	" Enable paste detection
-	let g:airline_detect_paste = 1
-	" Enable iminsert detection
-	let g:airline_detect_iminsert = 1
-	" Show a symbol in case of trailing whitespace
-	let g:airline_detect_whitespace = 2
-	" Define the text to display for each mode
-	let g:airline_mode_map = {
-				\ 'n'  : ' N',
-				\ 'i'  : ' I',
-				\ 'R'  : ' R',
-				\ 'v'  : ' V',
-				\ 'V'  : 'lV',
-				\ 'c'  : ' C',
-				\ '' : 'bV',
-				\ }
+let g:airline_powerline_fonts = '1'
+let g:airline_theme = 'deus'
+" Separators between categories
+" let g:airline_left_sep = '»'
+" let g:airline_right_sep = '«'
+" let g:airline_linecolumn_prefix = '␤ '
+" let g:airline_branch_prefix = '⎇ '
+" let g:airline_readonly_symbol = '₩'
+" let g:airline_paste_symbol = 'ρ'
+" Disable bufferline integration
+let g:airline_enable_bufferline = 0
+" Enable Syntastic integration
+let g:airline_enable_syntastic = 1
+" Enable Fugitive/Lawrencium integration
+let g:airline_enable_branch = 1
+" Enable Tagbar integration
+let g:airline_enable_tagbar = 1
+" Enable modified detection
+let g:airline_detect_modified = 1
+" Enable paste detection
+let g:airline_detect_paste = 1
+" Enable iminsert detection
+let g:airline_detect_iminsert = 1
+" Show a symbol in case of trailing whitespace
+let g:airline_detect_whitespace = 2
+" Define the text to display for each mode
+let g:airline_mode_map = {
+	\ 'n'  : ' N',
+	\ 'i'  : ' I',
+	\ 'R'  : ' R',
+	\ 'v'  : ' V',
+	\ 'V'  : 'lV',
+	\ 'c'  : ' C',
+	\ '' : 'bV',
+	\ }
 
 " Signify:
-	" Don't run Signify by default
-	let g:signify_disable_by_default = 1
-	" Don't overwrite signs used by other plugins (e.g. Syntastic)
-	let g:signify_sign_overwrite = 0
-	" Toggle Signify symbols
-	" (the mapping is similar to those defined in unimpaired)
-	noremap <silent> <leader>S :SignifyToggle<cr>
+" Don't run Signify by default
+let g:signify_disable_by_default = 1
+" Don't overwrite signs used by other plugins (e.g. Syntastic)
+let g:signify_sign_overwrite = 0
+" Toggle Signify symbols
+" (the mapping is similar to those defined in unimpaired)
+noremap <silent> <leader>S :SignifyToggle<cr>
 
 "}}}
 

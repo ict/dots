@@ -2,6 +2,10 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
 export EDITOR="vim"
+export PAGER=less
+export EDITOR=vim
+export BROWSER=firefox
+export LESS="-Ri"  # Smart case searching as in Vim
 
 setopt interactivecomments
 setopt cdablevars
@@ -24,7 +28,6 @@ alias ll='ls -lh'
 alias lla='ls -alh'
 alias lt='ls -h --color=auto --sort=time'
 alias grep='grep --color=auto'
-alias e='exit'
 alias ..='cd ..'
 alias pacman='sudo pacman'
 alias vncon='vncserver -geometry 1024x768 -depth 16'
@@ -54,3 +57,4 @@ function makepdf()
 	ps2pdf -sPAPERSIZE=a4 "$1.ps" "$1.pdf"
 	rm -f "$1.ps"
 }
+

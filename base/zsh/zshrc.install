@@ -1,10 +1,16 @@
 #!/bin/bash
 
-[ ! -e "$HOME"/.oh-my-zsh ] && git clone 'https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh"
-ln -frs zshrc "$HOME/.zshrc"
+[ ! -e "$HOME"/.oh-my-zsh ] && \
+	git clone 'https://github.com/robbyrussell/oh-my-zsh.git' "$HOME/.oh-my-zsh" && \
+	git clone 'https://github.com/zsh-users/zsh-autosuggestions' $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
+curl -sS https://webinstall.dev/zoxide | bash
+
+ln -frs zshrc "$HOME/.zshrc"
 shopt -s nullglob
-for script in *zsh
+echo Installing the following custom scripts from $(pwd)
+echo $(ls *.zsh)
+for script in *.zsh
 do
 	ln -frs "$script" "$HOME/.oh-my-zsh/custom/$script"
 done
