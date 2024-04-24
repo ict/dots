@@ -54,6 +54,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/indentpython.vim'
 Bundle 'ervandew/supertab'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'mechatroner/rainbow_csv'
 
 if ! s:is_windows
 	Bundle 'christoomey/vim-tmux-navigator'
@@ -74,6 +75,7 @@ filetype plugin indent on
 " {{{ APPEARANCE-SETTINGS
 set title "set the window title
 set number relativenumber "use (relative) line numbers
+let &t_ut=''  "fix kitty background issues
 syntax on
 if $COLORTERM != "gnome-terminal" && !has("gui_running") "putty and mobax have problems with solarized..
 	set t_Co=256
@@ -83,6 +85,9 @@ else
 	set t_Co=256
 	set bg=light
 	colorscheme solarized
+endif
+if $TERM == "xterm-kitty"
+	set term=kitty
 endif
 set cursorline
 set matchtime=1 "show matching brackets for .1 seconds
@@ -433,7 +438,7 @@ if has("gui_running")
 	if has("win32")
 		set guifont=Consolas_for_Powerline_FixedD:h10
 	else
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+		set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 11
 	endif
 
 	" initial window size
